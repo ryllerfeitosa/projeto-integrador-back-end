@@ -11,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,8 +27,8 @@ public class HelloApplication extends Application {
 
 
         //Definir o tamanho da tela
-        stage.setHeight(1024);
         stage.setWidth(1440);
+        stage.setHeight(1024);
 
 
         //bloquear o redimensionamento
@@ -64,17 +66,27 @@ public class HelloApplication extends Application {
         //Criar os botoes
         VBox boxbotoes = new VBox();
         boxbotoes.setPadding(new Insets(0, 20, 20, 20));
-        boxbotoes.setSpacing(10);
-        boxbotoes.maxWidth(500);
+
+
 
         //Botao de cadastro
         Button cadastrar = new Button("Cadastro de veículos");
+
+        //Configurando o botao cadastrar
+        cadastrar.setPrefWidth(200);
+        cadastrar.setPrefHeight(100);
+        cadastrar.setFont(Font.font("arial", 16));
         cadastrar.setOnAction(click -> {
             System.out.println("Nova tela para cadastrar veículos");
         });
 
         //Botao de registro de saida/pagamento
         Button registrarSaida = new Button("Saída/Pagamento");
+
+        //Configurando o botao registrarSaida
+        registrarSaida.setPrefWidth(200);
+        registrarSaida.setPrefHeight(100);
+        registrarSaida.setFont(Font.font("arial", 16));
         registrarSaida.setOnAction(click -> {
             System.out.println("Nova tela para confirmar o pagamento e a saída");
 
@@ -82,12 +94,18 @@ public class HelloApplication extends Application {
 
         //Botao para fechar o sistema
         Button sair = new Button("Sair");
+
+        //Configurando o botao sair
+        sair.setPrefWidth(200);
+        sair.setPrefHeight(100);
+        sair.setFont(Font.font("arial", 16));
         sair.setOnAction(click -> {
             System.out.println("Nova tela para sair");
 
         });
 
         vboxDosBotoes.getChildren().addAll(cadastrar, registrarSaida, sair);    //Adicionando os botoes na vBoxDosBotoes
+        vboxDosBotoes.setSpacing(50);
 
 
 
