@@ -2,8 +2,10 @@ package br.senai.sp.jandira.projetoEstacionamento;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -40,15 +42,48 @@ public class HelloApplication extends Application {
         //Configurar o main
         VBox listaDeVeiculos = new VBox();
         listaDeVeiculos.setStyle("-fx-padding: 10;-fx-background-color: blue");
+
+        //Determinando o tamanho da Vbox listaDeVeículos
         listaDeVeiculos.setPrefWidth(500);
         listaDeVeiculos.setPrefHeight(1000);
-        VBox botoes = new VBox();
-        botoes.setStyle("-fx-padding: 10;-fx-background-color: pink");
-        botoes.setPrefWidth(500);
-        botoes.setPrefHeight(1000);
-        HBox main = new HBox();
-        main.getChildren().addAll(listaDeVeiculos, botoes);
 
+        VBox vboxDosBotoes = new VBox();
+        vboxDosBotoes.setStyle("-fx-padding: 10;-fx-background-color: pink");
+
+        //Determinando o tamanho da Vbox vboxDosBotoes
+        vboxDosBotoes.setPrefWidth(500);
+        vboxDosBotoes.setPrefHeight(1000);
+
+        //Criar Hbox para alinhar a Vbox listaDeVeiculos e vboxDosBotoes na horizontal
+        HBox main = new HBox();
+        main.getChildren().addAll(listaDeVeiculos, vboxDosBotoes);
+
+        //Criar os botoes
+        VBox boxbotoes = new VBox();
+        boxbotoes.setPadding(new Insets(0, 20, 20, 20));
+        boxbotoes.setSpacing(10);
+
+        //Botao de cadastro
+        Button cadastrar = new Button("Cadastro de veículos");
+        cadastrar.setOnAction(click -> {
+            System.out.println("Nova tela para cadastrar veículos");
+        });
+
+        //Botao de registro de saida/pagamento
+        Button registrarSaida = new Button("Saída/Pagamento");
+        registrarSaida.setOnAction(click -> {
+            System.out.println("Nova tela para confirmar o pagamento e a saída");
+
+        });
+
+        //Botao para fechar o sistema
+        Button sair = new Button("Sair");
+        sair.setOnAction(click -> {
+            System.out.println("Nova tela para sair");
+
+        });
+
+        vboxDosBotoes.getChildren().addAll(cadastrar, registrarSaida, sair);    //Adicionando os botoes na vBoxDosBotoes
 
 
 
