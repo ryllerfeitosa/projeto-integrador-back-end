@@ -3,6 +3,6 @@ module com.example.projetoestacionamento {
     requires javafx.fxml;
 
 
-    opens com.example.projetoestacionamento to javafx.fxml;
-    exports com.example.projetoestacionamento;
+    opens br.senai.sp.jandira.projetoEstacionamento to javafx.fxml;
+    exports br.senai.sp.jandira.projetoEstacionamento;
 }

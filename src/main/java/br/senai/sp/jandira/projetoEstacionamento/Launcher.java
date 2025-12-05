@@ -1,4 +1,4 @@
-package com.example.projetoestacionamento;
+package br.senai.sp.jandira.projetoEstacionamento;
 
 import javafx.application.Application;
 
