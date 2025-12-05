@@ -25,9 +25,12 @@ public class HelloApplication extends Application {
 
 
         //Definir o tamanho da tela
-        stage.setHeight(1000);
-        stage.setWidth(1000);
+        stage.setHeight(1024);
+        stage.setWidth(1440);
 
+
+        //bloquear o redimensionamento
+        stage.setResizable(false);
 
 
         //Configurar o header da tela
@@ -44,15 +47,15 @@ public class HelloApplication extends Application {
         listaDeVeiculos.setStyle("-fx-padding: 10;-fx-background-color: blue");
 
         //Determinando o tamanho da Vbox listaDeVeículos
-        listaDeVeiculos.setPrefWidth(500);
-        listaDeVeiculos.setPrefHeight(1000);
+        listaDeVeiculos.setPrefWidth(1440);
+        listaDeVeiculos.setPrefHeight(1024);
 
         VBox vboxDosBotoes = new VBox();
         vboxDosBotoes.setStyle("-fx-padding: 10;-fx-background-color: pink");
 
         //Determinando o tamanho da Vbox vboxDosBotoes
-        vboxDosBotoes.setPrefWidth(500);
-        vboxDosBotoes.setPrefHeight(1000);
+        vboxDosBotoes.setPrefWidth(1440);
+        vboxDosBotoes.setPrefHeight(1024);
 
         //Criar Hbox para alinhar a Vbox listaDeVeiculos e vboxDosBotoes na horizontal
         HBox main = new HBox();
@@ -62,6 +65,7 @@ public class HelloApplication extends Application {
         VBox boxbotoes = new VBox();
         boxbotoes.setPadding(new Insets(0, 20, 20, 20));
         boxbotoes.setSpacing(10);
+        boxbotoes.maxWidth(500);
 
         //Botao de cadastro
         Button cadastrar = new Button("Cadastro de veículos");
